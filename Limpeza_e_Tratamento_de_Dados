@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Data Science</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1550439062-609e1531270e') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #00ff88;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #00ff88;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: #2d2d2d;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card i {
+            font-size: 3em;
+            color: #00ff88;
+            margin-bottom: 15px;
+        }
+
+        .project-card {
+            background: #2d2d2d;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .project-card img {
+            width: 300px;
+            border-radius: 5px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #2d2d2d;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #00ff88;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                flex-direction: column;
+            }
+            
+            .project-card img {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Portfolio Projeto</h1>
+            <p>Pandas: Limpeza e Tratamento de Dados</p>
+        </div>
+    </header>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <p>Analista de dados com experiência em manipulação e análise de dados utilizando Python, Pandas e Google Colab. Especializado em limpeza de dados, tratamento de outliers e preparação de datasets para modelos de machine learning.</p>
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <div class="container">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python & Pandas</h3>
+                    <p>Manipulação avançada de dados usando DataFrames</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Google Colab</h3>
+                    <p>Desenvolvimento de análises em ambiente cloud</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Visualização de Dados</h3>
+                    <p>Matplotlib, Seaborn e Plotly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <div class="container">
+            <h2>Projetos Recentes</h2>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300" alt="Projeto 1">
+                <div>
+                    <h3>Pré Processamento de Dados de Churn</h3>
+                    <p>Limpeza e preparação de dados para modelos de machine learning usando Pandas</p>
+                    <a href="https://colab.research.google.com/drive/1BUZejVg-vkAL4f1mYPH6ub3qcXOVR5yY?usp=sharing" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <button><i class="fab fa-google"></i> Ver no Colab</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <textarea rows="5" placeholder="Mensagem"></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.skill-card, .project-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if(cardTop < window.innerHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
